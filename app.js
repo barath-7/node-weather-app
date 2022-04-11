@@ -10,3 +10,10 @@ request({url:URL,json:true},(err,res)=>{
     );
 })
 
+request({url:GEOCODE_URL,json:true},(err,res)=>{
+  let data = res.body
+  let placeName = data.features[0].place_name
+  let latitude = data.features[0].center[1]
+  let longitude = data.features[0].center[0]
+  console.log(`The coordinates of ${placeName} is ${latitude}, ${longitude}`)
+})
