@@ -8,6 +8,8 @@ const getWeather = (latitude, longitude, callback) => {
     encodeURIComponent(latitude) +
     "," +
     encodeURIComponent(longitude);
+    //&units=f need to add in above line
+    
   request({ url: url, json: true }, (err, res) => {
     if (err) {
       callback(
@@ -31,7 +33,7 @@ const getWeather = (latitude, longitude, callback) => {
       temperature: temperature,
       feelsLike: feelsLike,
       precipitation: precipitation,
-      location:location
+      // location:location
     });
   });
 };

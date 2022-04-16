@@ -1,4 +1,5 @@
 const request = require("postman-request");
+require('dotenv').config()
 const { GEOCODE_BASE_URL, GEOCODE_ACCESS_KEY } = process.env;
 
 const getGeocode = (address, callback) => {
